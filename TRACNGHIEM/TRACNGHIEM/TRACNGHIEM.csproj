@@ -170,6 +170,12 @@
     <Compile Include="rpDSDKThi.Designer.cs">
       <DependentUpon>rpDSDKThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="rpKQTHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rpKQTHI.Designer.cs">
+      <DependentUpon>rpKQTHI.cs</DependentUpon>
+    </Compile>
     <Compile Include="TNDataSet.cs">
       <DependentUpon>TNDataSet.xsd</DependentUpon>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rpDSDKThi.resx">
       <DependentUpon>rpDSDKThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpKQTHI.resx">
+      <DependentUpon>rpKQTHI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

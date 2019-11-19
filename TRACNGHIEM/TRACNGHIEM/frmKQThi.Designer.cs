@@ -58,6 +58,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sP_MonHocSVTableAdapter = new TRACNGHIEM.TNDataSetTableAdapters.SP_MonHocSVTableAdapter();
             this.sP_LanThiSVTableAdapter = new TRACNGHIEM.TNDataSetTableAdapters.SP_LanThiSVTableAdapter();
+            this.sP_INBAITHI = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_INBAITHITableAdapter = new TRACNGHIEM.TNDataSetTableAdapters.SP_INBAITHITableAdapter();
+            this.tableAdapterManager = new TRACNGHIEM.TNDataSetTableAdapters.TableAdapterManager();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCauSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCacLuaChon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDapAn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDaChon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sP_INBAITHIGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tNDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -65,6 +80,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sPLanThiSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tNDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMonHocSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_INBAITHI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_INBAITHIGridControl)).BeginInit();
             this.SuspendLayout();
             // 
             // bar2
@@ -137,6 +155,7 @@
             this.btnInDSBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInDSBD.ImageOptions.Image")));
             this.btnInDSBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInDSBD.ImageOptions.LargeImage")));
             this.btnInDSBD.Name = "btnInDSBD";
+            this.btnInDSBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSBD_ItemClick);
             // 
             // btnThoatBDiem
             // 
@@ -145,6 +164,7 @@
             this.btnThoatBDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoatBDiem.ImageOptions.Image")));
             this.btnThoatBDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoatBDiem.ImageOptions.LargeImage")));
             this.btnThoatBDiem.Name = "btnThoatBDiem";
+            this.btnThoatBDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoatBDiem_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -159,7 +179,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 567);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 603);
             this.barDockControlBottom.Manager = this.barManager3;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1412, 0);
@@ -171,7 +191,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
             this.barDockControlLeft.Manager = this.barManager3;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 517);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 553);
             // 
             // barDockControlRight
             // 
@@ -180,7 +200,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1412, 50);
             this.barDockControlRight.Manager = this.barManager3;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 517);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 553);
             // 
             // groupControl1
             // 
@@ -333,11 +353,151 @@
             // 
             this.sP_LanThiSVTableAdapter.ClearBeforeFill = true;
             // 
+            // sP_INBAITHI
+            // 
+            this.sP_INBAITHI.DataMember = "SP_INBAITHI";
+            this.sP_INBAITHI.DataSource = this.tNDataSet;
+            // 
+            // sP_INBAITHITableAdapter
+            // 
+            this.sP_INBAITHITableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BAITHITableAdapter = null;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.COSOTableAdapter = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = TRACNGHIEM.TNDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCauSo,
+            this.colNoiDung,
+            this.colCacLuaChon,
+            this.colDapAn,
+            this.colDaChon,
+            this.colA,
+            this.colB,
+            this.colC,
+            this.colD});
+            this.gridView1.GridControl = this.sP_INBAITHIGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colCauSo
+            // 
+            this.colCauSo.FieldName = "CauSo";
+            this.colCauSo.MinWidth = 25;
+            this.colCauSo.Name = "colCauSo";
+            this.colCauSo.Visible = true;
+            this.colCauSo.VisibleIndex = 0;
+            this.colCauSo.Width = 94;
+            // 
+            // colNoiDung
+            // 
+            this.colNoiDung.FieldName = "NoiDung";
+            this.colNoiDung.MinWidth = 25;
+            this.colNoiDung.Name = "colNoiDung";
+            this.colNoiDung.Visible = true;
+            this.colNoiDung.VisibleIndex = 1;
+            this.colNoiDung.Width = 94;
+            // 
+            // colCacLuaChon
+            // 
+            this.colCacLuaChon.FieldName = "CacLuaChon";
+            this.colCacLuaChon.MinWidth = 25;
+            this.colCacLuaChon.Name = "colCacLuaChon";
+            this.colCacLuaChon.Width = 94;
+            // 
+            // colDapAn
+            // 
+            this.colDapAn.FieldName = "DapAn";
+            this.colDapAn.MinWidth = 25;
+            this.colDapAn.Name = "colDapAn";
+            this.colDapAn.Visible = true;
+            this.colDapAn.VisibleIndex = 6;
+            this.colDapAn.Width = 94;
+            // 
+            // colDaChon
+            // 
+            this.colDaChon.FieldName = "DaChon";
+            this.colDaChon.MinWidth = 25;
+            this.colDaChon.Name = "colDaChon";
+            this.colDaChon.Visible = true;
+            this.colDaChon.VisibleIndex = 7;
+            this.colDaChon.Width = 94;
+            // 
+            // colA
+            // 
+            this.colA.FieldName = "A";
+            this.colA.MinWidth = 25;
+            this.colA.Name = "colA";
+            this.colA.Visible = true;
+            this.colA.VisibleIndex = 2;
+            this.colA.Width = 94;
+            // 
+            // colB
+            // 
+            this.colB.FieldName = "B";
+            this.colB.MinWidth = 25;
+            this.colB.Name = "colB";
+            this.colB.Visible = true;
+            this.colB.VisibleIndex = 3;
+            this.colB.Width = 94;
+            // 
+            // colC
+            // 
+            this.colC.FieldName = "C";
+            this.colC.MinWidth = 25;
+            this.colC.Name = "colC";
+            this.colC.Visible = true;
+            this.colC.VisibleIndex = 4;
+            this.colC.Width = 94;
+            // 
+            // colD
+            // 
+            this.colD.FieldName = "D";
+            this.colD.MinWidth = 25;
+            this.colD.Name = "colD";
+            this.colD.Visible = true;
+            this.colD.VisibleIndex = 5;
+            this.colD.Width = 94;
+            // 
+            // sP_INBAITHIGridControl
+            // 
+            this.sP_INBAITHIGridControl.DataSource = this.sP_INBAITHI;
+            this.sP_INBAITHIGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sP_INBAITHIGridControl.Location = new System.Drawing.Point(0, 282);
+            this.sP_INBAITHIGridControl.MainView = this.gridView1;
+            this.sP_INBAITHIGridControl.MenuManager = this.barManager3;
+            this.sP_INBAITHIGridControl.Name = "sP_INBAITHIGridControl";
+            this.sP_INBAITHIGridControl.Size = new System.Drawing.Size(1412, 321);
+            this.sP_INBAITHIGridControl.TabIndex = 19;
+            this.sP_INBAITHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 94;
+            // 
             // frmKQThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 567);
+            this.ClientSize = new System.Drawing.Size(1412, 603);
+            this.Controls.Add(this.sP_INBAITHIGridControl);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -354,6 +514,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sPLanThiSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tNDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPMonHocSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_INBAITHI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_INBAITHIGridControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +552,20 @@
         private System.Windows.Forms.BindingSource sPLanThiSV;
         private System.Windows.Forms.BindingSource tNDataSetBindingSource;
         private TNDataSetTableAdapters.SP_LanThiSVTableAdapter sP_LanThiSVTableAdapter;
+        private System.Windows.Forms.BindingSource sP_INBAITHI;
+        private TNDataSetTableAdapters.SP_INBAITHITableAdapter sP_INBAITHITableAdapter;
+        private TNDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraGrid.GridControl sP_INBAITHIGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCauSo;
+        private DevExpress.XtraGrid.Columns.GridColumn colNoiDung;
+        private DevExpress.XtraGrid.Columns.GridColumn colCacLuaChon;
+        private DevExpress.XtraGrid.Columns.GridColumn colDapAn;
+        private DevExpress.XtraGrid.Columns.GridColumn colDaChon;
+        private DevExpress.XtraGrid.Columns.GridColumn colA;
+        private DevExpress.XtraGrid.Columns.GridColumn colB;
+        private DevExpress.XtraGrid.Columns.GridColumn colC;
+        private DevExpress.XtraGrid.Columns.GridColumn colD;
     }
 }

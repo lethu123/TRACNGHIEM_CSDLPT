@@ -99,7 +99,8 @@ namespace TRACNGHIEM
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
             try
             {
-                myreader = sqlcmd.ExecuteReader(); return myreader;
+                myreader = sqlcmd.ExecuteReader();
+                return myreader;
 
             }
             catch (SqlException ex)
